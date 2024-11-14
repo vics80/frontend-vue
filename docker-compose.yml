@@ -5,10 +5,10 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: vue_frontend
-    args:
+      args:
         UID: ${UID}
         GID: ${GID}
+    container_name: vue_frontend
     working_dir: /app
     volumes:
       - ./:/app
