@@ -6,6 +6,12 @@ WORKDIR /app
 # Copiar los archivos de dependencias al directorio de trabajo
 COPY package*.json ./
 
+# Cambiar propiedad de los archivos al usuario node
+RUN chown -R node:node /app
+
+# Cambiar al usuario node
+USER node
+
 # Instalar las dependencias del proyecto
 RUN npm install
 
