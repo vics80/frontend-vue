@@ -10,6 +10,7 @@ services:
         GID: ${GID}
     container_name: vue_frontend
     working_dir: /app
+    user: node
     volumes:
       - ./:/app
       - /app/node_modules
