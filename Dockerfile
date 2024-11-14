@@ -3,8 +3,6 @@ FROM node:18-alpine
 
 WORKDIR /app
 
-USER node
-
 # Copiar los archivos de dependencias al directorio de trabajo
 COPY package*.json ./
 
