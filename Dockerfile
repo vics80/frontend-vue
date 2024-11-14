@@ -4,13 +4,12 @@ FROM node:18-alpine
 # Variables de entorno para UID y GID
 ARG UID
 ARG GID
-# Crear el grupo y usuario con los UID y GID proporcionados
-RUN addgroup -g $GID appgroup && \
-    adduser -D -u $UID -G appgroup appuser
 
-RUN chown -R appuser:appgroup /app
+RUN usermod -u ${UID} www-data
 
-USER appuser
+RUN chown -R www-data:www-data /app
+
+USER www-data
 
 # Establecer el directorio de trabajo dentro del contenedor
 WORKDIR /app
