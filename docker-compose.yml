@@ -7,7 +7,6 @@ services:
       dockerfile: Dockerfile
     container_name: vue_frontend
     working_dir: /app
-    user: node
     volumes:
       - ./:/app
       - /app/node_modules
